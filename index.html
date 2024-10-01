@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PID Log Analyzer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+</head>
+<body class="p-4">
+    <h2>PID Log Analyzer</h2>
+    <div>
+        <input type="file" id="fileInput" class="form-control mb-3">
+        <button onclick="parseFile()" class="btn btn-primary">Parse File</button>
+    </div>
+
+    <h3>Data Table</h3>
+    <table id="dataTable" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Trial Nr.</th>
+                <th>Kp</th>
+                <th>Ki</th>
+                <th>Kd</th>
+                <th>Error</th>
+                <th>Overshoot</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h3>Graph</h3>
+    <canvas id="pidChart" width="400" height="200"></canvas>
+
+    <h3>Recent Logs</h3>
+    <ul id="recentLogs"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
